@@ -15,11 +15,12 @@
 		EF7A24992B6B1D4D00C3D9C9 /* SUToastViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7A24982B6B1D4D00C3D9C9 /* SUToastViewUITests.swift */; };
 		EF7A249B2B6B1D4D00C3D9C9 /* SUToastViewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7A249A2B6B1D4D00C3D9C9 /* SUToastViewUITestsLaunchTests.swift */; };
 		EF7A24A92B6B1EC100C3D9C9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7A24A82B6B1EC100C3D9C9 /* ToastView.swift */; };
-		EF7A24AC2B6B2C4900C3D9C9 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7A24AB2B6B2C4900C3D9C9 /* Timer.swift */; };
-		EFD6863A2B7059A500345CF2 /* ToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD686392B7059A500345CF2 /* ToastCenter.swift */; };
 		EFD6863C2B7059CF00345CF2 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD6863B2B7059CF00345CF2 /* Extension.swift */; };
 		EFD686422B7059ED00345CF2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD686412B7059ED00345CF2 /* Model.swift */; };
 		EFD686442B705AFC00345CF2 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD686432B705AFC00345CF2 /* ToastModifier.swift */; };
+		EFD686472B70B33F00345CF2 /* ToastObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD686462B70B33F00345CF2 /* ToastObservableObject.swift */; };
+		EFD6864A2B70C3B600345CF2 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = EFD686492B70C3B600345CF2 /* ComposableArchitecture */; };
+		EFD6864D2B70C3C300345CF2 /* ToastReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD6864C2B70C3C300345CF2 /* ToastReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,11 +52,11 @@
 		EF7A24982B6B1D4D00C3D9C9 /* SUToastViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUToastViewUITests.swift; sourceTree = "<group>"; };
 		EF7A249A2B6B1D4D00C3D9C9 /* SUToastViewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUToastViewUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EF7A24A82B6B1EC100C3D9C9 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
-		EF7A24AB2B6B2C4900C3D9C9 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		EFD686392B7059A500345CF2 /* ToastCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastCenter.swift; sourceTree = "<group>"; };
 		EFD6863B2B7059CF00345CF2 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		EFD686412B7059ED00345CF2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		EFD686432B705AFC00345CF2 /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
+		EFD686462B70B33F00345CF2 /* ToastObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastObservableObject.swift; sourceTree = "<group>"; };
+		EFD6864C2B70C3C300345CF2 /* ToastReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFD6864A2B70C3B600345CF2 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,18 +145,11 @@
 		EF7A24A72B6B1EBD00C3D9C9 /* ToastView */ = {
 			isa = PBXGroup;
 			children = (
+				EFD6864B2B70C3BA00345CF2 /* ToastReducer */,
+				EFD686452B70B33500345CF2 /* ToastObservableObject */,
 				EFD686382B70599D00345CF2 /* ToastCenter */,
-				EF7A24AA2B6B2C4500C3D9C9 /* Timer */,
 			);
 			path = ToastView;
-			sourceTree = "<group>";
-		};
-		EF7A24AA2B6B2C4500C3D9C9 /* Timer */ = {
-			isa = PBXGroup;
-			children = (
-				EF7A24AB2B6B2C4900C3D9C9 /* Timer.swift */,
-			);
-			path = Timer;
 			sourceTree = "<group>";
 		};
 		EFD686382B70599D00345CF2 /* ToastCenter */ = {
@@ -188,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				EF7A24A82B6B1EC100C3D9C9 /* ToastView.swift */,
-				EFD686392B7059A500345CF2 /* ToastCenter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +193,22 @@
 				EFD686412B7059ED00345CF2 /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EFD686452B70B33500345CF2 /* ToastObservableObject */ = {
+			isa = PBXGroup;
+			children = (
+				EFD686462B70B33F00345CF2 /* ToastObservableObject.swift */,
+			);
+			path = ToastObservableObject;
+			sourceTree = "<group>";
+		};
+		EFD6864B2B70C3BA00345CF2 /* ToastReducer */ = {
+			isa = PBXGroup;
+			children = (
+				EFD6864C2B70C3C300345CF2 /* ToastReducer.swift */,
+			);
+			path = ToastReducer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +227,9 @@
 			dependencies = (
 			);
 			name = SUToastView;
+			packageProductDependencies = (
+				EFD686492B70C3B600345CF2 /* ComposableArchitecture */,
+			);
 			productName = SUToastView;
 			productReference = EF7A247A2B6B1D4B00C3D9C9 /* SUToastView.app */;
 			productType = "com.apple.product-type.application";
@@ -289,6 +302,9 @@
 				Base,
 			);
 			mainGroup = EF7A24712B6B1D4B00C3D9C9;
+			packageReferences = (
+				EFD686482B70C3B600345CF2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = EF7A247B2B6B1D4B00C3D9C9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -332,13 +348,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFD686442B705AFC00345CF2 /* ToastModifier.swift in Sources */,
+				EFD6864D2B70C3C300345CF2 /* ToastReducer.swift in Sources */,
+				EFD686472B70B33F00345CF2 /* ToastObservableObject.swift in Sources */,
 				EFD686422B7059ED00345CF2 /* Model.swift in Sources */,
 				EF7A24802B6B1D4B00C3D9C9 /* ContentView.swift in Sources */,
 				EF7A24A92B6B1EC100C3D9C9 /* ToastView.swift in Sources */,
 				EF7A247E2B6B1D4B00C3D9C9 /* SUToastViewApp.swift in Sources */,
 				EFD6863C2B7059CF00345CF2 /* Extension.swift in Sources */,
-				EFD6863A2B7059A500345CF2 /* ToastCenter.swift in Sources */,
-				EF7A24AC2B6B2C4900C3D9C9 /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +679,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EFD686482B70C3B600345CF2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EFD686492B70C3B600345CF2 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFD686482B70C3B600345CF2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EF7A24722B6B1D4B00C3D9C9 /* Project object */;
 }

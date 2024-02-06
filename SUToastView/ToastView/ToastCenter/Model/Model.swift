@@ -7,27 +7,24 @@
 
 import SwiftUI
 
-@frozen public enum ToastPosition {
-    case top
-    case center
-    case bottom
-    case custom(CGFloat)
-}
+//@frozen public enum ToastPosition {
+//    case top
+//    case center
+//    case bottom
+//    case custom(CGFloat)
+//}
 
 
 @frozen public struct ToastModel {
     public var text: String
     public var time: TimeInterval
-    public var position: ToastPosition
-    @Binding public var isPresented: Bool
+    public var position: Alignment
     
     public init(text: String,
-                time: TimeInterval,
-                position: ToastPosition,
-                isPresented: Binding<Bool>) {
+                time: TimeInterval = 3,
+                position: Alignment = .center) {
         self.text = text
         self.time = time
         self.position = position
-        self._isPresented = isPresented
     }
 }

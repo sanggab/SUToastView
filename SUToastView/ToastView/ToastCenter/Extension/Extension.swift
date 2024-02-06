@@ -6,13 +6,11 @@
 //
 
 import SwiftUI
+import Combine
 
 public extension View {
     
-    func toast(isPresented: Binding<Bool> ,text: String, time: TimeInterval = 3, position: ToastPosition = .center) -> some View {
-        return modifier(ToastModifier(model: ToastModel(text: text,
-                                                 time: time,
-                                                 position: position,
-                                                 isPresented: isPresented)))
+    func toast() -> some View {
+        return modifier(ToastModifier())
     }
 }

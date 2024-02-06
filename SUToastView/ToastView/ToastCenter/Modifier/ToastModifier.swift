@@ -9,12 +9,29 @@ import SwiftUI
 import Combine
 
 public struct ToastModifier: ViewModifier {
-    public var model: ToastModel
+    @State private var toastState: Bool = false
+    @EnvironmentObject var toastObject: ToastObservableObject
+    @State private var toastModel: ToastModel = ToastModel(text: "하잉")
+    @State private var id: Int = 1
     
     public func body(content: Content) -> some View {
         content
             .overlay {
-                ToastView(model: model)
+                if toastState {
+                    ToastView(isPresented: $toastState, model: toastModel)
+                        .id(id)
+                }
+            }
+            .onReceive(toastObject.showToast) { output in
+                if !output.text.isEmpty {
+                    toastModel = output
+                    if toastState {
+                        id += 1
+                    } else {
+                        toastState = true
+                    }
+                    
+                }
             }
     }
 }

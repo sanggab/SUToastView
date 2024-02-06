@@ -6,20 +6,27 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 public struct ContentView: View {
-    @State private var toastState: Bool = false
+    @ObservedObject var toastObject: ToastObservableObject = .init()
     
-    public let string = ["가나다라", "마바사", "abcd", "efg", "5시 퇴근", "6시 퇴근"]
+    public let textList = ["가나다라", "마바사", "abcd", "efg", "5시 퇴근", "6시 퇴근", "진짜로 긴 텍스트가 나오면 어떻게 배치될지 넘 궁금한데 한 번 해보자"]
+    
+    @EnvironmentObject var toastStore: ViewStoreOf<ToastReducer>
     
     public var body: some View {
         ZStack {
-            Button("눌러봐") {
-                toastState = true
+            VStack {
+                Button("눌러봐") {
+                    toastObject.showToast.send(ToastModel(text: textList.randomElement() ?? "", time: 3, position: .top))
+                }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .toast()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .toast(isPresented: $toastState, text: string.randomElement() ?? "")
+        .environmentObject(toastObject)
     }
 }
 
