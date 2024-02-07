@@ -35,6 +35,7 @@ public struct ToastView: View {
                 .foregroundColor(.white)
                 .cornerRadius(8)
                 .fixedSize(horizontal: false, vertical: true)
+                .shadow(color: Color.black.opacity(0.24), radius: 6, x: 0, y: 2)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: model.position)
         .transition(.opacity.animation(isPresented ? .easeIn : .easeOut))

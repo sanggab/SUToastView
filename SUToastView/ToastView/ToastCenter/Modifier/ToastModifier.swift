@@ -14,6 +14,8 @@ public struct ToastModifier: ViewModifier {
     @State private var toastModel: ToastModel = ToastModel(text: "하잉")
     @State private var id: Int = 1
     
+    @StateObject private var timerObserver: TimerObservableObject = .init()
+    
     public func body(content: Content) -> some View {
         content
             .overlay {
@@ -30,7 +32,6 @@ public struct ToastModifier: ViewModifier {
                     } else {
                         toastState = true
                     }
-                    
                 }
             }
     }
