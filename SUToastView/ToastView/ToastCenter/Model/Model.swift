@@ -14,8 +14,15 @@ import SwiftUI
 //    case custom(CGFloat)
 //}
 
+@frozen public enum ToastMethod {
+    case show(ToastModel)
+    case cancel
+}
 
 @frozen public struct ToastModel {
+    
+    public static let zero: ToastModel = ToastModel(text: "", time: 0, position: .center)
+    
     public var text: String
     public var time: TimeInterval
     public var position: Alignment

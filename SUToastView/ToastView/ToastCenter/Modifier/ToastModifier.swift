@@ -22,16 +22,24 @@ public struct ToastModifier: ViewModifier {
                 if toastState {
                     ToastView(isPresented: $toastState, model: toastModel)
                         .id(id)
+                        .environmentObject(timerObserver)
                 }
             }
-            .onReceive(toastObject.showToast) { output in
-                if !output.text.isEmpty {
-                    toastModel = output
-                    if toastState {
-                        id += 1
-                    } else {
-                        toastState = true
+            .onReceive(toastObject.showToast) { method in
+                switch method {
+                case .show(let model):
+                    if !model.text.isEmpty {
+                        toastModel = model
+                        
+                        if toastState {
+                            id += 1
+                        } else {
+                            toastState = true
+                        }
                     }
+                    
+                case .cancel:
+                    toastState = false
                 }
             }
     }

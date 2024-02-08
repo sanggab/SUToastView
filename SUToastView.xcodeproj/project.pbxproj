@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF241B252B7452D4001A1BCB /* ToastObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF241B242B7452D4001A1BCB /* ToastObservableObject.swift */; };
 		EF7A247E2B6B1D4B00C3D9C9 /* SUToastViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7A247D2B6B1D4B00C3D9C9 /* SUToastViewApp.swift */; };
 		EF7A24802B6B1D4B00C3D9C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7A247F2B6B1D4B00C3D9C9 /* ContentView.swift */; };
 		EF7A24822B6B1D4D00C3D9C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF7A24812B6B1D4D00C3D9C9 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF241B242B7452D4001A1BCB /* ToastObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastObservableObject.swift; sourceTree = "<group>"; };
 		EF7A247A2B6B1D4B00C3D9C9 /* SUToastView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUToastView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF7A247D2B6B1D4B00C3D9C9 /* SUToastViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUToastViewApp.swift; sourceTree = "<group>"; };
 		EF7A247F2B6B1D4B00C3D9C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				EFD686462B70B33F00345CF2 /* TimerObservableObject.swift */,
+				EF241B242B7452D4001A1BCB /* ToastObservableObject.swift */,
 			);
 			path = TimerObservableObject;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			files = (
 				EFD686442B705AFC00345CF2 /* ToastModifier.swift in Sources */,
 				EFD6864D2B70C3C300345CF2 /* ToastReducer.swift in Sources */,
+				EF241B252B7452D4001A1BCB /* ToastObservableObject.swift in Sources */,
 				EFD686472B70B33F00345CF2 /* TimerObservableObject.swift in Sources */,
 				EFD686422B7059ED00345CF2 /* Model.swift in Sources */,
 				EF7A24802B6B1D4B00C3D9C9 /* ContentView.swift in Sources */,

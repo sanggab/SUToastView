@@ -19,7 +19,7 @@ public struct ContentView: View {
         ZStack {
             VStack {
                 Button("눌러봐") {
-                    toastObject.showToast.send(ToastModel(text: textList.randomElement() ?? "", time: 3, position: .top))
+                    toastObject.showToast.send(.show(ToastModel(text: textList.randomElement() ?? "", time: 3, position: .top)))
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
